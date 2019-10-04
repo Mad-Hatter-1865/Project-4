@@ -1,0 +1,17 @@
+.NavBar {
+    grid-area: nav;
+    display: flex;
+    margin: 0 0 20px;
+    background-color: rgb(85, 5,85);
+    height: 80px;
+    padding: 0 20px 0 30px;
+}
+
+.NavBar a {
+    color: yellow;
+}
+
+.NavBar-link {
+    margin: 0 10px;
+    
+}
