@@ -47,6 +47,27 @@ class App extends Component {
               handleSignupOrLogin={this.handleSignupOrLogin}
               />
           }/>
+
+          <Route exact path='/index' render={props => (
+            <NavBar 
+            user={this.state.user}
+            handleLogout={this.handleLogout} 
+            />
+          )} />
+
+          <Route exact path='/mygames' render={props => (
+            <NavBar 
+            user={this.state.user}
+            handleLogout={this.handleLogout} 
+            />
+          )}/>
+
+          <Route exact path='/game' render={props => (
+            <NavBar 
+            user={this.state.user}
+            handleLogout={this.handleLogout} 
+            />
+          )}/>
           
         </Switch>
       </div>

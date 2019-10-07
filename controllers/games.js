@@ -1,14 +1,21 @@
 const Game = require('../models/game');
 
 module.exports = {
-    getAll,
+    getAllGames,
+    getMyGames,
     createGame,
     deleteGame,
     editGame,
     show
 };
 
-function getAll(req, res) {
+function getAllGames(req, res) {
+    Game.find({}).then(function(game) {
+        res.status(200).json(game);
+    });
+}
+
+function getMyGames(req,res) {
     Game.find({}).then(function(game) {
         res.status(200).json(game);
     });
