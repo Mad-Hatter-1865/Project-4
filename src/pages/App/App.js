@@ -6,6 +6,7 @@ import {Route, Switch} from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import CreatePage from '../CreatePage/CreatePage';
+import IndexPage from '../IndexPage/IndexPage';
 
 class App extends Component {
   constructor() {
@@ -50,10 +51,16 @@ class App extends Component {
           }/>
 
           <Route exact path='/index' render={props => (
-            <NavBar 
+            <div>
+              <NavBar 
             user={this.state.user}
             handleLogout={this.handleLogout} 
             />
+            <IndexPage 
+              {...props}
+            />
+            </div>
+            
           )} />
 
           <Route exact path='/mygames' render={props => (
