@@ -5,6 +5,7 @@ import userService from '../../utils/userService';
 import {Route, Switch} from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
+import CreatePage from '../CreatePage/CreatePage';
 
 class App extends Component {
   constructor() {
@@ -63,10 +64,16 @@ class App extends Component {
           )}/>
 
           <Route exact path='/game' render={props => (
-            <NavBar 
+            <div>
+              <NavBar 
             user={this.state.user}
             handleLogout={this.handleLogout} 
             />
+              <CreatePage 
+              {...props}
+              user={this.state.user}
+            />
+            </div>
           )}/>
           
         </Switch>
