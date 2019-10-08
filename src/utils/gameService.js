@@ -2,7 +2,7 @@ import tokenService from './tokenService';
 
 // index
 export function getAllGames() {
-    return fetch('/api/index').then(function (res) {
+    return fetch('/api/games/index').then(function (res) {
         return res.json();
     })
 }
@@ -16,7 +16,7 @@ export function getGame(id) {
 
 // create
 export function createGame(game) {
-    return fetch('/api/game', {
+    return fetch('/api/games/game/', {
         method: 'POST',
         body: JSON.stringify(game),
         headers: {
@@ -29,7 +29,7 @@ export function createGame(game) {
 
 // edit
 export function editGame(game) {
-    return fetch(`/api/game/${game.id}`, {
+    return fetch(`/api/games/game/${game.id}`, {
         method: 'PUT',
         body: JSON.stringify({
             title: game.title,
@@ -45,7 +45,7 @@ export function editGame(game) {
 
 // delete
 export function deleteGame(id) {
-    return fetch(`/api/game/${id}`, {
+    return fetch(`/api/games/game/${id}`, {
         method: 'delete'
     }).then(function (res) {
         return res.json()
