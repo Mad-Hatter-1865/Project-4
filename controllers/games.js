@@ -2,6 +2,7 @@ const Game = require('../models/game');
 
 module.exports = {
     getAllGames,
+    getOneGame,
     getMyGames,
     createGame,
     deleteGame,
@@ -14,6 +15,12 @@ function getAllGames(req, res) {
         res.status(200).json(game);
     });
 }
+
+function getOneGame(req, res) {
+    Game.findById(req.params.id).then(function(game) {
+      res.status(200).json(game);
+    });
+  }
 
 function getMyGames(req,res) {
     Game.find({}).then(function(game) {

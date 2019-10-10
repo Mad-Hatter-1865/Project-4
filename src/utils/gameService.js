@@ -1,20 +1,19 @@
 import tokenService from './tokenService';
 
-// index
 export function getAllGames() {
     return fetch('/api/games/index').then(function (res) {
         return res.json();
     })
 }
 
-// show
+
 export function getGame(id) {
-    return fetch(`/api/game/${id}`).then(function (res) {
+    return fetch(`/api/games/game/${id}`).then(function (res) {
         return res.json();
     })
 }
 
-// create
+
 export function createGame(game) {
     return fetch('/api/games/game/', {
         method: 'POST',

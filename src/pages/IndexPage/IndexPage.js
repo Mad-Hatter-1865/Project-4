@@ -24,7 +24,9 @@ class IndexPage extends Component {
             <div>
             {this.state.games.map((game, i) => {
                 return (
-                    <h3>{game.title}</h3>
+                    <div>
+                        <Link to={`/show/${game._id}`}>{game.title}</Link>
+                    </div>
                 )
             })}
         </div>

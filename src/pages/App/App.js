@@ -7,6 +7,9 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import CreatePage from '../CreatePage/CreatePage';
 import IndexPage from '../IndexPage/IndexPage';
+import MyGamesPage from '../MyGamesPage/MyGamesPage';
+import ShowPage from '../ShowPage/ShowPage';
+import EditPage from '../EditPage/EditPage';
 
 class App extends Component {
   constructor() {
@@ -64,10 +67,16 @@ class App extends Component {
           )} />
 
           <Route exact path='/mygames' render={props => (
+            <div>
             <NavBar 
-            user={this.state.user}
-            handleLogout={this.handleLogout} 
-            />
+          user={this.state.user}
+          handleLogout={this.handleLogout} 
+          />
+          <MyGamesPage 
+            {...props}
+          
+          />
+          </div>
           )}/>
 
           <Route exact path='/game' render={props => (
@@ -83,6 +92,32 @@ class App extends Component {
             </div>
           )}/>
           
+            <Route exact path='/show/:gameid' render={props => (
+              <div>
+                <NavBar 
+                user={this.state.user}
+                handleLogout={this.handleLogout} 
+                />
+                <ShowPage 
+                  {...props}
+                  user={this.state.user}
+                />
+              </div>
+            )}/>
+
+            <Route exact path='/game/:gameid/edit' render={props => (
+              <div>
+                <NavBar 
+                user={this.state.user}
+                handleLogout={this.handleLogout} 
+                />
+                <EditPage
+                  {...props}
+                  user={this.state.user}
+                />
+              </div>
+            )}/>
+
         </Switch>
       </div>
     )

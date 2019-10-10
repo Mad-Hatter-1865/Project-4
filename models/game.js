@@ -31,6 +31,9 @@ var gameSchema = new Schema({
         type: String,
         required: true
     },
+    userId: {
+        type: String
+    },
     commentsect: commentsectSchema
 }, {
     timestamps: true

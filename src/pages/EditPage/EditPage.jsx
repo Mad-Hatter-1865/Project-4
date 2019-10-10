@@ -1,34 +1,44 @@
-import React, {Component} from 'react';
-import {createGame} from '../../utils/gameService';
+import React, { Component } from 'react';
+import { getGame, editGame } from '../../utils/gameService';
+import userService from '../../utils/userService';
 
-class CreatePage extends Component {
+class EditPage extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            id: '',
             title: '',
             platform: '',
             releaseDate: '',
-            userId: this.props.user,
-            userName: this.props.user.name,
+            userId: this.props.user._id,
             review: '',
-            reviewTitle: ''
+            reviewTitle: '',
+            currentId: userService.getUser()._id
         }
+    }
+
+    componentDidMount() {
+        var gameid = this.props.match.params.gameid;
+        var self = this;
+        getGame(gameid).then(function(json) {
+            self.setState({ id: gameid,title: json.title, platform: json.platform, releaseDate: json.releaseDate,review: json.review, reviewTitle: json.reviewTitle})
+        })
     }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        createGame(this.state).then(function () {
+        editGame(this.state).then(function(json) {
             window.location = '/index'
         })
+        
     }
-
-    onChange = (e) => this.setState({[e.target.name]: e.target.value})
-
+        
+    onChange = (e) => this.setState({ [e.target.name]: e.target.value })
 
     render () {
         return (
             <div>
-                <h2>Please enter the game information</h2>
+                <h2>Edit: {this.state.reviewTitle}</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label>Game Title:
                         <input type="text" name="title" onChange={this.onChange} value={this.state.title}></input>
@@ -45,11 +55,11 @@ class CreatePage extends Component {
                     <label>Review Title:
                         <input type="text" name="reviewTitle" onChange={this.onChange} value={this.state.reviewTitle}></input>
                     </label><br></br><br></br>
-                    <input className='btn btn-success' type="submit" value="Submit Review" />
+                    <input className='btn btn-success' type="submit" value="Edit Review" />
                 </form>
             </div>
         )
     }
 }
 
-export default CreatePage;
+export default EditPage;
