@@ -10,6 +10,7 @@ import IndexPage from '../IndexPage/IndexPage';
 import MyGamesPage from '../MyGamesPage/MyGamesPage';
 import ShowPage from '../ShowPage/ShowPage';
 import EditPage from '../EditPage/EditPage';
+import HomePage from '../HomePage/HomePage';
 
 class App extends Component {
   constructor() {
@@ -33,10 +34,13 @@ class App extends Component {
       <div>
         <Switch>
           <Route exact path='/' render={() =>
-            <NavBar 
+            <div>
+              <NavBar 
               user={this.state.user}
               handleLogout={this.handleLogout} 
             />
+            <HomePage />
+            </div>
           }/>
 
           <Route exact path='/signup' render={({ history }) => 
