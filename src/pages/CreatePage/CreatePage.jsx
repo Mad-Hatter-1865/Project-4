@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {createGame} from '../../utils/gameService';
+import './CreatePage.css'
 
 class CreatePage extends Component {
     constructor(props) {
@@ -27,7 +28,7 @@ class CreatePage extends Component {
 
     render () {
         return (
-            <div>
+            <div className='create-page'>
                 <h2>Please enter the game information</h2>
                 <form onSubmit={this.handleSubmit}>
                     <label>Game Title:
@@ -45,7 +46,7 @@ class CreatePage extends Component {
                     <label>Review Title:
                         <input type="text" name="reviewTitle" onChange={this.onChange} value={this.state.reviewTitle}></input>
                     </label><br></br><br></br>
-                    <input className='btn btn-success' type="submit" value="Submit Review" />
+                    <input className='btn-success' type="submit" value="Submit Review" />
                 </form>
             </div>
         )

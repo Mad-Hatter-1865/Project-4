@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {getAllGames} from '../../utils/gameService';
 import {Link} from 'react-router-dom';
 import userService from '../../utils/userService';
+import './IndexPage.css'
 
 class IndexPage extends Component {
     constructor(props) {
@@ -21,11 +22,11 @@ class IndexPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className='index-page'>
             {this.state.games.map((game, i) => {
                 return (
                     <div>
-                        <Link to={`/show/${game._id}`}>{game.title}</Link>
+                        <Link className='show-links' to={`/show/${game._id}`}>{game.title}</Link>
                     </div>
                 )
             })}

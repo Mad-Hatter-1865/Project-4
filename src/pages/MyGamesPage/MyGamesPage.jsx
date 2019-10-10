@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {getAllGames} from '../../utils/gameService';
 import {Link} from 'react-router-dom';
 import userService from '../../utils/userService';
+import './MyGamesPage.css'
 
 class MyGamesPage extends Component {
     constructor(props) {
@@ -21,7 +22,7 @@ class MyGamesPage extends Component {
 
     render() {
         return (
-            <div>
+            <div className='mygames-page'>
             {this.state.games.map((game) => {
                 console.log(this.state.currentId)
                 console.log(game.userId)
@@ -29,10 +30,10 @@ class MyGamesPage extends Component {
                    <div>
                        {game.userId === this.state.currentId ? (
                            <div>
-                                <Link to={`/show/${game._id}`}>{game.title}</Link>
+                                <Link className='show-links' to={`/show/${game._id}`}>{game.title}</Link>
                             </div>
                             ) : (
-                                   <h3>You have not made any reviews yet.</h3>
+                                   <div></div>
                                    
                                 )}
                    </div>
