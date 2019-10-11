@@ -4,12 +4,12 @@ const gamesCtrl = require('../../controllers/games');
 
 router.use(require('../../config/auth'));
 
-router.get('/index',checkAuth, gamesCtrl.getAllGames);
-router.get('/mygames',checkAuth, gamesCtrl.getMyGames);
-router.post('/game', checkAuth, gamesCtrl.createGame);
-router.delete('/game/:id', checkAuth, gamesCtrl.deleteGame);
-router.get('/game/:id', checkAuth, gamesCtrl.getOneGame);
-router.put('/game/:id', checkAuth, gamesCtrl.editGame);
+router.get('/index', gamesCtrl.getAllGames);
+router.get('/mygames', gamesCtrl.getMyGames);
+router.post('/game', gamesCtrl.createGame);
+router.delete('/game/:id', gamesCtrl.deleteGame);
+router.get('/game/:id',  gamesCtrl.getOneGame);
+router.put('/game/:id', gamesCtrl.editGame);
 
 function checkAuth(req, res, next) {
     if (req.user) return next();
