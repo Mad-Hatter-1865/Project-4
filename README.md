@@ -12,6 +12,11 @@ will then be able view that review.
 - MongoDB
 - Mongoose
 
+## Screenshots
+![Wireframe](https://i.imgur.com/6uguOgV.png)
+![Wireframe](https://i.imgur.com/TLLC3U6.png)
+![Wireframe](https://i.imgur.com/kK7uCRA.png)
+
 ## Getting Started
 Trello Board: [Project 4 Trello Board](https://trello.com/b/wuNMyZfi/project-4)<br/>
 App: [Neon Game Reviews](https://neon-games.herokuapp.com/)
