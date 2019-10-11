@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import NavBar from '../../components/NavBar/NavBar';
 import './App.css';
 import userService from '../../utils/userService';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import CreatePage from '../CreatePage/CreatePage';
@@ -58,6 +58,7 @@ class App extends Component {
           }/>
 
           <Route exact path='/index' render={props => (
+            userService.getUser() ? 
             <div>
               <NavBar 
             user={this.state.user}
@@ -67,10 +68,13 @@ class App extends Component {
               {...props}
             />
             </div>
+            :
+            <Redirect to='/login'/>
             
           )} />
 
           <Route exact path='/mygames' render={props => (
+            userService.getUser() ? 
             <div>
             <NavBar 
           user={this.state.user}
@@ -78,12 +82,14 @@ class App extends Component {
           />
           <MyGamesPage 
             {...props}
-          
           />
           </div>
+          :
+          <Redirect to='/login'/>
           )}/>
 
           <Route exact path='/game' render={props => (
+            userService.getUser() ? 
             <div>
               <NavBar 
             user={this.state.user}
@@ -94,9 +100,12 @@ class App extends Component {
               user={this.state.user}
             />
             </div>
+            :
+            <Redirect tp='/login'/>
           )}/>
           
             <Route exact path='/show/:gameid' render={props => (
+              userService.getUser() ? 
               <div>
                 <NavBar 
                 user={this.state.user}
@@ -107,9 +116,12 @@ class App extends Component {
                   user={this.state.user}
                 />
               </div>
+              :
+              <Redirect to='/login'/>
             )}/>
 
             <Route exact path='/game/:gameid/edit' render={props => (
+              userService.getUser() ? 
               <div>
                 <NavBar 
                 user={this.state.user}
@@ -120,6 +132,8 @@ class App extends Component {
                   user={this.state.user}
                 />
               </div>
+              :
+              <Redirect tp='/login'/>
             )}/>
 
         </Switch>

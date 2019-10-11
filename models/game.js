@@ -20,7 +20,7 @@ var gameSchema = new Schema({
         required: true
     },
     releaseDate: {
-        type: Date,
+        type: String,
         required: true
     },
     review: {
