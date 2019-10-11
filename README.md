@@ -16,4 +16,8 @@ will then be able view that review and comment on it.
 Trello Board: [Project 4 Trello Board](https://trello.com/b/wuNMyZfi/project-4)
 ## Unsolved Problems
 ## Future Enhancements
+- Comment Section at the bottom of every review(Show Page)
+- Search bar at the top of the all games page(Index Page)
+- Home page will be filled out
+- A user will be able to add screenshots to their review
 
