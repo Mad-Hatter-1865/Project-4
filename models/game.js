@@ -20,7 +20,7 @@ var gameSchema = new Schema({
         required: true
     },
     releaseDate: {
-        type: Date,
+        type: String,
         required: true
     },
     review: {
@@ -30,6 +30,9 @@ var gameSchema = new Schema({
     reviewTitle: {
         type: String,
         required: true
+    },
+    userId: {
+        type: String
     },
     commentsect: commentsectSchema
 }, {

@@ -5,8 +5,13 @@ import './NavBar.css';
 const NavBar = (props) => {
     let nav = props.user ?
       <div>
+        <h2 className='App-title'>Neon Game Reviews</h2>
         <Link to='' className='NavBar-link' onClick={props.handleLogout} >LOG OUT</Link>
-        &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <Link to='' className='NavBar-link'>Home Page</Link>
+        <Link to='/index' className='NavBar-link'>All Reviews</Link>
+        <Link to='/mygames' className='NavBar-link'>My Reviews</Link>
+        <Link to='/game' className='NavBar-link'>Create Review</Link>
+      
         <span className='NavBar-welcome'>WELCOME, {props.user.name}</span>
       </div>
       :

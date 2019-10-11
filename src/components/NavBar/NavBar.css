@@ -1,17 +1,35 @@
 .NavBar {
     grid-area: nav;
     display: flex;
-    margin: 0 0 20px;
-    background-color: rgb(85, 5,85);
+    margin: 0 0;
+    background-color: black;
     height: 80px;
     padding: 0 20px 0 30px;
+    border-bottom: 4px solid #bc13fe;
 }
 
 .NavBar a {
-    color: yellow;
+    color: #4666FF;
 }
 
 .NavBar-link {
     margin: 0 10px;
-    
+    text-decoration: none;
+}
+.NavBar-link:hover {
+    color: #bc13fe;
+}
+
+.NavBar-link:active {
+    color: red;
+}
+
+.NavBar-welcome {
+    color: #bc13fe;
+}
+
+.App-title {
+    display: inline;
+    margin-right: 60px;
+    color: #bc13fe;
 }

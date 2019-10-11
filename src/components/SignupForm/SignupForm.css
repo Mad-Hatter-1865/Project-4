@@ -1,0 +1,10 @@
+.SignupPage {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+}
