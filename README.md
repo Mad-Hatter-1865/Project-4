@@ -1,7 +1,7 @@
 
 ## Intro
 This app will allow a user to write a review of any video game where other users
-will then be able view that review and comment on it.
+will then be able view that review.
 ## Technologies
 - HTML
 - CSS
@@ -14,6 +14,7 @@ will then be able view that review and comment on it.
 
 ## Getting Started
 Trello Board: [Project 4 Trello Board](https://trello.com/b/wuNMyZfi/project-4)
+App: [Neon Game Reviews](https://neon-games.herokuapp.com/)
 ## Unsolved Problems
 ## Future Enhancements
 - Comment Section at the bottom of every review(Show Page)
